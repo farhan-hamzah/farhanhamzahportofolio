@@ -1,6 +1,52 @@
-import type { Project, InProgressProject, Experience } from "@/lib/types";
+import type { Project, InProgressProject } from "@/lib/types";
 
 export const projects: Project[] = [
+  {
+    id: "timeseries-predictive-analytics",
+    title: "Enterprise Time-Series Predictive Analytics",
+    eyebrow: "Machine Learning · Enterprise Solutions",
+    description:
+      "Solusi machine learning untuk time-series predictive analytics berskala besar, berfokus pada automated feature engineering, multi-model evaluation, dan optimasi performa inferensi.",
+    stack: [
+      "Python",
+      "Time-Series",
+      "Machine Learning",
+      "Feature Engineering",
+      "LightGBM",
+      "Scikit-learn",
+      "Pandas",
+      "Data Pipeline",
+    ],
+    color: "teal",
+    images: [
+      "/images/projects/timeseries-analytics/cover.svg",
+      "/images/experience/suvarna/surat-keterangan-pkl.jpg",
+      "/images/experience/suvarna/team-suvarna-1.jpg",
+      "/images/experience/suvarna/team-suvarna-2.jpg",
+    ],
+    links: [
+      { label: "PT. Suvarna Media Informatika", url: "https://www.suvarna-mi.com" },
+    ],
+    details: [
+      "Worked on the development of a machine learning solution for time-series predictive analytics, focusing on large-scale data processing, feature engineering, and model optimization.",
+      "Explored and evaluated multiple modeling approaches (LightGBM, Scikit-learn, statistical baselines) to develop an effective and reliable predictive solution.",
+      "Mendesain arsitektur feature extraction berbasis waktu: lag features, rolling window aggregates, dan dekomposisi musiman untuk menangkap pola temporal kompleks.",
+      "Menerapkan cross-validation berbasis waktu (TimeSeriesSplit) guna mencegah look-ahead bias / data leakage selama tahap evaluasi.",
+      "Melakukan hyperparameter tuning dan optimasi model untuk memastikan akurasi tinggi serta inferensi yang efisien pada data skala besar.",
+    ],
+    overview:
+      "Enterprise Time-Series Predictive Analytics adalah solusi machine learning yang dikembangkan untuk menganalisis data deret waktu berskala besar dan menghasilkan peramalan (forecasting) yang andal. Proyek ini dikerjakan secara langsung di Department Developer PT. Suvarna Media Informatika selama periode magang Data Analyst.",
+    challenge:
+      "Tantangan terbesar dalam analitik time-series skala enterprise adalah fluktuasi data yang dinamis, noise, serta risiko overfitting dan data leakage. Untuk mengatasinya, kami merancang strategi split data time-aware yang ketat, membersihkan anomali melalui deteksi outlier terotomasi, serta menguji berbagai algoritma pemodelan (LightGBM, regresi reguler, baseline statistik) guna menemukan trade-off optimal antara latency inferensi dan ketepatan prediksi (RMSE/MAE).",
+    impact:
+      "Menyediakan model prediktif yang tervalidasi dan siap diintegrasikan ke dalam ekosistem analitik internal PT. Suvarna Media Informatika, sekaligus menjadi portofolio implementasi riil machine learning skala enterprise.",
+    meta: {
+      role: "Data Analyst & Machine Learning Intern",
+      team: ["Farhan Hamzah", "Developer Department · PT Suvarna Media Informatika"],
+      duration: "28 Jul 2026 — 11 Sept 2026",
+      context: "Magang / PKL di PT. Suvarna Media Informatika (Enterprise IT Solutions)",
+    },
+  },
   {
     id: "tensorlease",
     title: "TensorLease",
@@ -240,16 +286,3 @@ export const inProgress: InProgressProject = {
     "Pipeline vision-language yang memasangkan encoder citra chest X-ray dengan language model medis untuk menyusun draf laporan radiologi secara otomatis — menggabungkan BiomedCLIP (frozen ViT encoder, 512-dim) sebagai image encoder, linear projection layer untuk menyelaraskan embedding, dan Gemma-2B yang di-fine-tune dengan LoRA untuk generasi laporan (Findings & Impression) di dataset CheXpert Plus (~223K samples).",
   stack: ["BiomedCLIP", "Linear Projection", "Gemma-2B", "LoRA", "PyTorch"],
 };
-
-// FIX KRITIS: placeholder/dummy data terhapus. Ini WAJIB diisi data asli sebelum deploy —
-// sebelumnya berupa instruksi editor ("Ganti dengan...") yang ke-commit dan akan tampil live.
-// Isi field di bawah dengan data sebenarnya (org, role, period, description), contoh struktur:
-export const experience: Experience[] = [
-  {
-    hash: "f0a9c22",
-    org: "TODO: nama organisasi/lab sebenarnya",
-    role: "TODO: role sebenarnya",
-    period: "TODO: mis. 2025 — Sekarang",
-    description: "TODO: deskripsi tanggung jawab/pencapaian nyata, 1-2 kalimat.",
-  },
-];

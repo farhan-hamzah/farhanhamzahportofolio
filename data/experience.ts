@@ -2,6 +2,39 @@ import type { Experience } from "@/lib/types";
 
 export const experiences: Experience[] = [
   {
+    hash: "suvarna-media-informatika",
+    org: "PT. Suvarna Media Informatika · Developer Department",
+    role: "Data Analyst & Machine Learning Intern",
+    period: "Jul 2026 — Sept 2026",
+    color: "rose",
+    images: [
+      "/images/experience/suvarna/surat-keterangan-pkl.jpg",
+      "/images/experience/suvarna/team-suvarna-1.jpg",
+      "/images/experience/suvarna/team-suvarna-2.jpg",
+    ],
+    description:
+      "Selama program Praktik Kerja Lapangan (PKL) di Department Developer PT. Suvarna Media Informatika, saya berkontribusi langsung dalam perancangan dan pengembangan solusi machine learning untuk time-series predictive analytics pada data skala enterprise. Fokus pekerjaan mencakup pemrosesan data berskala besar (large-scale data processing), perancangan feature engineering berbasis waktu (lag features, rolling statistics, seasonality decomposition), serta optimasi model prediktif. Saya mengeksplorasi dan mengevaluasi berbagai pendekatan pemodelan untuk menghasilkan sistem prediksi yang akurat, tangguh, dan andal untuk kebutuhan bisnis perusahaan.",
+    highlights: [
+      "Worked on the development of a machine learning solution for time-series predictive analytics, focusing on large-scale data processing, feature engineering, and model optimization.",
+      "Explored and evaluated multiple modeling approaches (LightGBM, Scikit-learn, statistical baselines) to develop an effective and reliable predictive solution.",
+      "Membangun pipeline data preprocessing dan feature extraction time-series (temporal lags, rolling window aggregations, trend & seasonality) dari dataset berskala besar.",
+      "Melakukan evaluasi performa model dan cross-validation berbasis waktu (TimeSeriesSplit) guna meminimalkan look-ahead bias dan menjaga stabilitas metrik (RMSE, MAE, MAPE).",
+      "Menyelesaikan seluruh rangkaian tugas magang Data Analyst dengan predikat baik dan terverifikasi melalui Surat Keterangan PKL resmi No. 01/SMI-DEV/SKK-HRD/IX/2026 dari Direktur Utama PT. Suvarna Media Informatika.",
+    ],
+    skills: [
+      "Machine Learning",
+      "Time-Series Analysis",
+      "Predictive Analytics",
+      "Feature Engineering",
+      "Large-Scale Data Processing",
+      "Model Optimization",
+      "Python",
+      "LightGBM",
+      "Scikit-learn",
+      "Pandas",
+    ],
+  },
+  {
     hash: "ai-x-softdev",
     org: "AI X SoftDev · Bootcamp GDGoC Telkom University",
     role: "Best Participant · Bootcamp Member",

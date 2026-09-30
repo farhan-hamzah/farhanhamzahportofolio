@@ -139,9 +139,14 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       )}
 
-      {project.links && project.links.length > 0 && (
-        <div className="mt-4 flex flex-wrap gap-2 text-sm">
-          {project.links.map((link) => (
+      {((project.links && project.links.length > 0) || !project.repo) && (
+        <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
+          {!project.repo && (
+            <span className="rounded-full border border-line/60 bg-bg/80 px-3 py-1 font-mono text-[11px] text-fg-dim">
+              🔒 Private Codebase
+            </span>
+          )}
+          {project.links && project.links.map((link) => (
             <a
               key={link.url}
               href={link.url}

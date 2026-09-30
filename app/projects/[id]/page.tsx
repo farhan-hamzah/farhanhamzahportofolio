@@ -138,15 +138,41 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <section className="rounded-[28px] border border-line/50 bg-bg/70 p-8">
               <h2 className="font-display text-xl font-semibold">Project links</h2>
               <div className="mt-4 space-y-3 text-sm">
-                {project.repo && (
+                {project.repo ? (
                   <a href={project.repo} target="_blank" rel="noreferrer" className="block rounded-2xl border border-line/60 bg-bg px-4 py-3 text-fg transition hover:opacity-80">
                     Repository →
                   </a>
+                ) : (
+                  <div className="rounded-2xl border border-line/50 bg-bg/60 p-4 text-xs text-fg-dim">
+                    <p className="font-medium text-fg flex items-center gap-1.5">
+                      <span>🔒</span> Private Repository
+                    </p>
+                    <p className="mt-1 text-fg-faint leading-relaxed">
+                      Source code bersifat internal/proprietary enterprise (PT. Suvarna Media Informatika).
+                    </p>
+                  </div>
                 )}
                 {project.live && (
                   <a href={project.live} target="_blank" rel="noreferrer" className="block rounded-2xl border border-line/60 bg-bg px-4 py-3 text-fg transition hover:opacity-80">
                     Live demo →
                   </a>
+                )}
+                {project.links && project.links.length > 0 && (
+                  <div className="pt-2 space-y-2">
+                    {project.links
+                      .filter((l) => l.url !== project.repo && l.url !== project.live)
+                      .map((link) => (
+                        <a
+                          key={link.url}
+                          href={link.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="block rounded-2xl border border-line/60 bg-bg px-4 py-3 text-fg transition hover:opacity-80"
+                        >
+                          {link.label} →
+                        </a>
+                      ))}
+                  </div>
                 )}
               </div>
             </section>
