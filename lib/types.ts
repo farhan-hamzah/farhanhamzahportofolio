@@ -49,3 +49,21 @@ export interface Experience {
   highlights?: string[];
   skills?: string[];
 }
+
+export interface Competition {
+  id: string;
+  title: string;
+  event: string;
+  organizer: string;
+  award: string;
+  period: string;
+  teamName: string;
+  teammates: string[];
+  description: string;
+  highlights: string[];
+  metrics: string[];
+  skills: string[];
+  color: ProjectColor;
+  repo: string;
+  images: string[];
+}
