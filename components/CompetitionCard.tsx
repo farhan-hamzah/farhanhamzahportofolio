@@ -115,7 +115,7 @@ export function CompetitionCard({ item }: { item: Competition }) {
                 <img
                   src={src}
                   alt={`${item.event} — documentation ${index + 1}`}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />
                 <span className="absolute bottom-1.5 right-1.5 rounded-md bg-black/60 px-1.5 py-0.5 text-[9px] font-medium text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100 sm:text-[10px]">

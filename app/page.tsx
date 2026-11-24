@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CompetitionHomeCard } from "@/components/CompetitionHomeCard";
 import { Hero } from "@/components/Hero";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionCard } from "@/components/SectionCard";
@@ -6,15 +7,6 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { SectionShell } from "@/components/SectionShell";
 import { competitions } from "@/data/competitions";
 import { projects, inProgress } from "@/data/projects";
-
-const competitionColorClass = {
-  violet: "bg-card-violet",
-  teal: "bg-card-teal",
-  peach: "bg-card-peach",
-  sky: "bg-card-sky",
-  sage: "bg-card-sage",
-  rose: "bg-card-rose",
-} as const;
 
 export default function Home() {
   return (
@@ -51,55 +43,7 @@ export default function Home() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {competitions.map((comp) => (
-            <article
-              key={comp.id}
-              className={`flex flex-col justify-between overflow-hidden rounded-[24px] border border-line/50 p-6 shadow-[0_10px_35px_rgba(31,75,63,0.06)] ${competitionColorClass[comp.color]}`}
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2">
-                  <span className="rounded-full bg-accent-soft px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-accent">
-                    {comp.award}
-                  </span>
-                  <span className="font-mono text-[11px] text-fg-faint">{comp.period}</span>
-                </div>
-                <p className="mt-3 font-mono text-[11px] text-accent">{comp.event}</p>
-                <h3 className="mt-1 font-display text-lg font-semibold leading-snug text-fg">
-                  {comp.title}
-                </h3>
-                <p className="mt-2 text-xs text-fg-faint">
-                  Team {comp.teamName} · {comp.organizer}
-                </p>
-              </div>
-
-              <div className="mt-5">
-                <div className="flex flex-wrap gap-1.5">
-                  {comp.metrics.slice(0, 2).map((metric) => (
-                    <span
-                      key={metric}
-                      className="rounded-lg border border-accent/20 bg-bg/75 px-2.5 py-0.5 font-mono text-[11px] text-fg"
-                    >
-                      {metric}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-4 flex items-center gap-3 text-xs font-medium">
-                  <Link
-                    href="/competitions"
-                    className="text-accent hover:underline"
-                  >
-                    Details →
-                  </Link>
-                  <a
-                    href={comp.repo}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-fg-dim hover:text-fg hover:underline"
-                  >
-                    GitHub ↗
-                  </a>
-                </div>
-              </div>
-            </article>
+            <CompetitionHomeCard key={comp.id} comp={comp} />
           ))}
         </div>
       </SectionShell>
